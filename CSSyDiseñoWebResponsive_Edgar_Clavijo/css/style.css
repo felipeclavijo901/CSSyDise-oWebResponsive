@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Dancing Script';
+    background: black;
+    animation: onLoad 1s;
+}
+
+img{
+    box-shadow: 2px 2px #02010a;
+}
+
+
+
+
+header{
+    background: #5b7989;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 15px;
+}
+.actualPage{
+    text-decoration: none;
+}
+.contenido{
+    max-width: 900px;
+    margin: 0 auto;
+}
+header h1{
+    text-shadow: 2px 2px #02010a;
+    width: 50%;
+}
+header nav{
+    width: 50%;
+}
+header nav ul{
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    float: right;
+    justify-content: center;
+    align-items: center;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a{
+    color: white;
+    text-decoration: underline;
+    margin-left: 15px;
+}
+
+
+
+
+
+
+
+section{
+    clear: both;
+}
+/* INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX INDEX */
+section .centralImage{
+    background: #82c3a6;
+    text-align: center;
+    padding: 20px;
+}
+section .centralImage img{
+    max-width: 90%;
+}
+section .container{
+    background: #d5c75f;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+}
+section .container a{
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+}
+section .container img{
+    width: 30vw;
+    margin: 20px;
+    transition: all .3s;
+}
+section .container a::after{
+    content: attr(data-name);
+    color: black;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-decoration: underline;
+    font-weight: bold;
+}
+section .container [href="paisajes.html"]:hover img{
+    transform: rotate(10deg);
+    box-shadow: 2px 2px #82c3a6;
+}
+section .container [href="retratos.html"]:hover img{
+    transform: translate(20px, -5px);
+    box-shadow: 2px 2px #82c3a6;
+}
+/* PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES PAISAJES */
+section .container div{
+    flex-grow: 1;
+    width: 33%;
+    text-align: center;
+}
+section .container div img{
+    width: 90%;
+    margin: 5px;
+    transition: all .3s;
+}
+
+section .container div:nth-child(1){
+    -webkit-filter: blur(10px); 
+    filter: blur(10px);
+}
+section .container div:nth-child(2),
+section .container div:nth-child(4),
+section .container div:nth-child(6){
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+section .container div:nth-child(3){
+    -webkit-filter: blur(10px); 
+    filter: sepia(90%);
+}
+
+
+
+
+
+footer{
+    border-radius: 0px 0px 10px 10px;
+    background: #C6d5c5;
+    color: black;
+    display: flex;
+    flex-flow: row wrap;
+}
+footer > div{
+    width: calc(25% - 30px);
+    padding: 15px;
+    font-weight: bold;
+}
+footer > div div{
+    margin-top: 5px;
+}
+footer .email{
+    border-bottom: 1px solid #000;
+}
+footer .fa{
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 15px;
+}
+footer .fa-facebook{
+    background: #3B5998;
+    color: white;
+}
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+
+
+
+/* ANIMATIONS ANIMATIONS ANIMATIONS ANIMATIONS ANIMATIONS ANIMATIONS ANIMATIONS ANIMATIONS ANIMATIONS ANIMATIONS */
+@-webkit-keyframes onLoad{
+    0%{
+        transform: translate(0, 100%);
+    }
+    80%{
+        transform: translate(0, -2%);
+    }
+    100%{
+        transform: translate(0, 0%);
+    }
+}
+
+
+
+
+
+/* Resposive Web Desing */
+@media (max-width: 900px) {
+    .contenido {
+        width: 100%;
+    }
+    header{
+        display: block;
+    }
+    header h1{
+        text-align: center;
+        width: 100%;
+    }
+    header nav{
+        width: 100%;
+    }
+    header nav ul{
+        float: none;
+    }
+    section .container{
+        display: block;
+    }
+    section .container img{
+        width: 100%;
+        margin: 35px 0px 0px 0px;
+    }
+    footer{
+        display: block;
+        padding-bottom: 30px;
+    }
+    footer > div{
+        width: calc(100% - 60px);
+        padding: 30px 30px 0px 30px;
+    }
+    section .container div{
+        width: 100%;
+        flex-grow: none;
+    }
+}
